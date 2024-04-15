@@ -113,7 +113,14 @@ callButton.onclick = async () => {
 
   hangupButton.disabled = false;
 };
-
+window.onload = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const callId = urlParams.get('callId');
+  if (callId) {
+    // Join the call automatically using the call ID
+    joinCallAutomatically(callId);
+  }
+};
 // 3. Answer the call with the unique ID
 answerButton.onclick = async () => {
   const callId = callInput.value;
@@ -149,29 +156,5 @@ answerButton.onclick = async () => {
       }
     });
   });
-  async function joinCallAutomatically(callId) {
-    const callDoc = firestore.collection('calls').doc(callId);
-    const callData = (await callDoc.get()).data();
-    
-    if (callData) {
-      // Continue with your existing logic to answer the call
-      // For example:
-      // - Set remote description
-      // - Create answer
-      // - Set local description
-      // - Update call document with answer
-      // - Listen for offer candidates
-    } else {
-      console.error('Call does not exist');
-      // Handle error - Call does not exist
-    }
-  }
-  window.onload = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const callId = urlParams.get('callId');
-    if (callId) {
-      // Join the call automatically using the call ID
-      joinCallAutomatically(callId);
-    }
-  };
+  
 };
