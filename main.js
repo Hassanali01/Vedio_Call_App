@@ -113,6 +113,9 @@ callButton.onclick = async () => {
 
   hangupButton.disabled = false;
 };
+function generateCallUrl(callId) {
+  return window.location.href.split('?')[0] + '?call=' + callId;
+}
 
 // 3. Answer the call with the unique ID
 answerButton.onclick = async () => {
@@ -149,4 +152,7 @@ answerButton.onclick = async () => {
       }
     });
   });
+  const callUrl = generateCallUrl(callId);
+  // Display URL for joining the call
+  alert('Share this URL to join the call: ' + callUrl);
 };
