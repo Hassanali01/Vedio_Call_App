@@ -5,6 +5,12 @@ import 'firebase/firestore';
 
 const firebaseConfig = {
   // your config
+  apiKey: "AIzaSyCxsZjE8xqTltmPyzMhTC3Ho1BvupBUu6Q",
+  authDomain: "vediocallapp-bc493.firebaseapp.com",
+  projectId: "vediocallapp-bc493",
+  storageBucket: "vediocallapp-bc493.appspot.com",
+  messagingSenderId: "481852095636",
+  appId: "1:481852095636:web:aa2e66ca3daeeebe6a0881"
 };
 
 if (!firebase.apps.length) {
