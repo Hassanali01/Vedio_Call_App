@@ -1,4 +1,4 @@
-import './style.css';
+import './style.css?122';
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
