@@ -9,49 +9,93 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Personal Call</title>
+   
   </head>
   <body>
-    <div class="content">
-      
-        <h1>Welcome to your Personal Video Call</h1>
-        <div class="row">
-            <div class="col-md-8 call_container offset-md-1">
-              <div class="videos">
-                <span>
-                  <h3>You</h3>
-                  <video id="webcamVideo" autoplay playsinline></video>
-                </span>
-                <span>
-                  <h3>Guest</h3>
-                  <video id="remoteVideo" autoplay playsinline></video>
-                </span>
-          
-          
+    <div class="container mt-4">
+      <div class="section-border" >
+        <div class="row ">
+          <div class="col-md-1">
+            <div class="sidebar">
+              <a href="#home"><i class="fa fa-bell" ></i></a>
+              <a href="#clients"> <i class='fas fa-user-alt'></i> </a>
+              <a href="#services"><i class="fa fa-calendar" ></i> </a>
+              <a href="#services"><i class="fa fa-calendar" ></i> </a>
+              <a href="#clients"><i class="fa fa-camera" ></i> </a>
+              <a href="#contact"><i class="fa fa-home" ></i></a>
+            </div>
+          </div>
+          <div class="col-md-11">
+            <div class="video-section">
+             
+              <div class="row ">
+                <div class="col-md-6 col-sm-6">
+                  <div class="d-flex mt-3" >
+                    <div  class="bg-secondary mx-3" style="height: 30px;color:white; width: 30px; border-radius: 5px;"> <i class='fas fa-angle-left' style='font-size:24px; margin-top:3px ;margin-left: 8px;' ></i></div>
+                    <div class="mt-2 heading-video"><h6>Welcome to your Personal Video Call</h6>
+                    </div>
+                    <div  class="d-flex bg-secondary mx-1 rounded mx-2" style=" color: white;  height: 30px; width: 80px; "><i class='fas fa-user-friends' style='font-size:15px; padding: 5px; margin-left: 10px; margin-top: 2px;'></i> 
+                    <div><p class="mt-1">15+</p></div>
+                    </div>
+                </div>
+               <hr>
+                </div>
+                
+                <div class="col-md-6 col-sm-6 ">
+                  <div>
+                    <div class="d-flex mt-3 justify-content-end" style="margin-right: 50px;">
+                      <button id="callButton" disabled class="btn btn-light create-call">Create Call (offer)</button>
+                      <div>  <button id="webcamButton" class="btn btn-light mx-1 webcam"><i class="fa fa-camera" style="font-size:24px; margin-right:5px"></i>Start webcam</button></div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="action col-md-2 ">
-              <button id="webcamButton" class="btn btn-primary">Start webcam</button>
-              <h2>Create a new Call</h2>
-              <button id="callButton" disabled class="btn btn-primary">Create Call (offer)</button>
-          
-              <h2>Join a Call</h2>
-              <p>Answer the call from a different browser window or device</p>
+              <div class="row">
+                <div class="col-6 ">
+                  <video id="webcamVideo" class="webcamVideo" autoplay playsinline>
+                  </video>
+                  </div>
+                <div class="col-6">
+                
+                  <div >
+                  <video id="remoteVideo" class="remoteVideo" autoplay playsinline></video>
+                    </div>
+                </div>
+              </div>
+                <div class="d-flex" style="margin-left: 30px;">
+                <div><button class="btn btn-light "><i class='fas fa-video mx-2 ' style='font-size:20px'></i>join a call</button></div>
+              </div>
               
-              <input id="callInput" />
-              <button id="answerButton" class="btn btn-primary" >Join</button>
-          
-              <h2>Hangup</h2>
-          
-              <button id="hangupButton" class="btn btn-danger">Hangup</button>
-          
+              <div class="mx-4 ">
+                <p class="font-text-join-call">Answer the call from a different browser window or device</p>
+                <div>
+                  <div class="d-flex justify-content-between">
+                    <span>
+                      <input id="callInput" class="input" />
+                      <button id="answerButton" class="btn btn-danger mb-1" >Join</button></span>
+                    <div class=""  style="margin-right: 50px;"><button id="hangupButton" class="btn btn-danger ">Hangup</button></div>
+                  </div>
+                </div>
+              <div>
+              </div>
+            </div> 
             </div>
+          </div>
         </div>
-          
-        
+      </div>
     </div>
+   
+   
     <script type="module" src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
   </body>
 
 </html>
